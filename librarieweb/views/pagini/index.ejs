@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<%- include("../fragmente/head.ejs") %>
+		<title>Librarie Online</title>
+
+		<link rel="stylesheet" href="/css/home.css">
+	</head>
+	<body>
+		<%- include("../fragmente/header.ejs") %>
+
+		<main>
+			<h1>Bine ati venit la libraria online!</h1>
+			<section id="despre-site">
+				<h2 style="display: none;">Info</h2>
+				<figure>
+					<img src="/images/home/books.jpeg" alt="Books" title="Books" style="width:60%;height:40%;margin:1%;">
+					<figcaption>Cartile noastre (<small><a href="https://cdn.elearningindustry.com/wp-content/uploads/2016/05/top-10-books-every-college-student-read-1024x640.jpeg">Sursa imaginii</a></small>)
+					</figcaption>
+				</figure>
+				<p>
+				In librăria noastră vă punem la dispoziţie o gamă larga de carti din domenii diverse.<br/>
+				Aici menţionăm doar câteva exemple: <b>beletristica</b>, <b>afaceri/economie</b>, <b>biografii/jurnale</b>, <b>manuale scolare</b>, <b>limbi straine</b>, <b>drept</b>, <b>religie</b>, <b>reviste</b>, etc.</p>
+				<p>Profită de multitudinea de titluri disponibile și alege cele mai interesante cărți pentru tine și familia ta. <br/>
+				La noi găsești o mulțime de lecturi la <em>prețuri atractive</em>, potrivite pentru toate vârstele si gusturile. 
+				Libraria a fost fondata in data de <time datetime="2012-10-18">18 oct 2012</time>.
+				</p>
+			</section>
+			<section id="carti-romanesti" class="list-box">
+				<h3>Carti romanesti</h3>
+				<ul>
+					<li>L. Rebreanu: Ion, Răscoala, Pădurea spânzuraților</li>
+					<li>Camil Petrescu: Ultima noapte de dragoste, întâia noapte de război</li>
+					<li>Ionel Teodoreanu: La Medeleni</li>
+					<li>Marin Preda: Moromeții</li>
+					<li>Mircea Eliade: Maitreyi</li>
+					<li>G. Bacovia: Poezii</li>
+					<li>Duiliu Zamfirescu: Viața la țară</li>
+					<li>Nichita Stănescu: 11 Elegii</li>
+					<li>Emil Cioran: Caietele</li>
+					<li>I. Slavici: Mara</li>
+				</ul>
+			</section>
+			<section id="carti-straine" class="list-box">
+				<h3>Literatura universala</h3>
+				<ul>
+					<li>Crimă şi pedeapsă – F. M. Dostoievski</li>
+					<li>Război şi pace – Lev Tolstoi</li>
+					<li>Anna Karenina – Lev Tolstoi</li>
+					<li>Fraţii Karamazov – Fiodor Dostoyevsky</li>
+					<li>Lolita – Vladimir Nabokov</li>
+					<li>Idiotul – F. M. Dostoievski</li>
+					<li>Maestrul şi Margareta – Mihail Bulgako</li>
+					<li>Marile sperante – Charles Dickens</li>
+					<li>Hamlet – Shakespeare</li>
+					<li>În căutarea timpului pierdut – Marcel Proust</li>
+				</ul>
+			</section>
+			<section id="autori-romani" class="list-box">
+				<h3>Autori romani</h3>
+				<ul>
+					<li>Mihai Eminescu</li>
+					<li>Ioan Slavici</li>
+					<li>Ion Luca Caragiale</li>
+					<li>Alexandru Macedonski</li>
+					<li>Lucian Blaga</li>
+					<li>Constantin Negruzzi</li>
+					<li>Duiliu Zamfirescu</li>
+					<li>Camil Petrescu</li>
+					<li>L. Rebreanu</li>
+					<li>Ion Creangă</li>
+				</ul>
+			</section>	
+			<section id="autori-straini" class="list-box">
+				<h3>Autori straini</h3>
+				<ul>
+					<li>F. M. Dostoievski</li>
+					<li>Lev Tolstoi</li>
+					<li>Agatha Christie</li>
+					<li>Mark Twain</li>
+					<li>Vladimir Nabokov</li>
+					<li>Stephen King</li>
+					<li>Mihail Bulgako</li>
+					<li>Charles Dickens</li>
+					<li>Shakespeare</li>
+					<li>Marcel Proust</li>
+				</ul>
+			</section>
+			<section id="tabel">
+				<h2>Tabelul cu reduceri saptamanale</h2>
+				<div class="table-container">
+					<table>
+						<thead>
+							<tr>
+								<th rowspan="2" colspan="2">Interval orar</th>
+								<th colspan="2">Zile cu reduceri</th>
+							</tr>
+							<tr>
+								<th>Sambata</th>
+								<th>Duminica</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>10</td>
+								<td>11</td>
+								<td>25% la beletristica</td>
+								<td>25% la religie</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>12</td>
+								<td rowspan="2">10% la limbi straine</td>
+								<td rowspan="3">15% la biografii/jurnale</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>14</td>
+								<td rowspan="2">5% la drept</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>15</td>
+								<td rowspan="2">35% la manuale</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>16</td>
+								<td>20% la reviste</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th colspan="4">In restul timpului: preturi normale</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</section>
+			<section id="sectiune-citate">
+				<article class="citate">
+					<h2>Citate despre carti</h2>
+					<blockquote class="citat-element" cite="https://citesc.blog/2018/07/06/20-cele-mai-frumoase-citate-despre-carti/">
+						<h3>Marcel Proust</h3>
+						<p>&quot;Probabil că nu există zile mai fericite din copilărie, ca acelea petrecute citind o carte extraordinară.&quot;</p>
+					</blockquote>
+					<blockquote class="citat-element" cite="https://citesc.blog/2018/07/06/20-cele-mai-frumoase-citate-despre-carti/">
+						<h3>Mason Cooley</h3>
+						<p>&quot;Lectura ne oferă destinații unde putem merge chiar dacă trebuie să rămânem acolo unde suntem.&quot;</p>
+					</blockquote>
+					<blockquote class="citat-element" cite="https://citesc.blog/2018/07/06/20-cele-mai-frumoase-citate-despre-carti/">
+						<h3>G.K. Chesterton</h3>
+						<p>&quot;O cameră fără cărţi este ca un corp fără suflet.&quot;</p>
+					</blockquote>
+				</article>
+			</section>
+			<div id="banner">Site-ul e un proiect demonstrativ!</div>
+		</main>
+
+	    <%- include("../fragmente/footer.ejs") %>	
+	</body>
+</html>

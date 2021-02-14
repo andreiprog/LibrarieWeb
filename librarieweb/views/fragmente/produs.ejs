@@ -1,0 +1,35 @@
+<article id="art<%= locals.produs.id %>" class="carte <%= locals.produs.categorie %>">
+    <h2 class="nume-produs"><%= locals.produs.nume %></h2>
+    <p><span style="font-weight: bolder;">Categorie: </span><span class="categorie" style="font-style:italic;"><%= locals.produs.categorie %></span></p>
+    <p><span style="font-weight: bolder;">Descriere: </span><%= locals.produs.descriere %></p>
+    <img src="<%= locals.produs.imagine %>" alt="<%= locals.produs.nume %>"/>
+    <table>
+        <tr>
+            <th>Pret</th>
+            <td><span class="pret"><%= locals.produs.pret %></span> lei</td>
+        </tr>
+        <tr>
+            <th>Autor</th>
+            <td><%= locals.produs.autor %></td>
+        </tr>
+        <tr>
+            <th>Cuvinte cheie</th>
+            <td class="cuvinte-cheie"><%= locals.produs.cuvinte_cheie %></td>
+        </tr>
+        <tr>
+            <th>Data tiparirii</th>
+            <td><time datetime="<%= locals.produs.data_tiparirii %>"><%= locals.produs.data_tiparirii %></time></td>
+        </tr>
+        <tr>
+            <th>Editie</th>
+            <% if(locals.produs.editie == 0){ %>
+                <td class="editie">Necartonata</td>
+            <% }else{ %>
+                <td class="editie">Cartonata</td>
+            <% } %>
+        </tr>
+    </table>
+    <label>Selectare produs:
+        <input type="checkbox" class="i-select-prod">
+    </label>
+</article>

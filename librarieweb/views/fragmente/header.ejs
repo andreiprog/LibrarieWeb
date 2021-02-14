@@ -1,0 +1,35 @@
+<header id="begin">
+	<div>
+		<a class="logo" href='/index'>Librarie Online</a><br>Cărți pentru toate gusturile
+	</div>
+	<nav>
+		<label id="hamburger" for="ch-menu"><span class="fas fa-bars"></span></label>
+		<input id="ch-menu" type="checkbox">
+		<ul class="menu">
+			<li><a href="/index"><span class="fas fa-home"></span><span id="home-text"> Home</span></a></li>
+			<li><a href="/carti">Carti</a></li>
+
+			<li><a href="/produse">Produse</a> </li>
+
+			<li>
+				<label for="gallery_option">Galerie</label>
+				<input class="ch-submenu" type="checkbox" id="gallery_option">
+
+				<ul class="submenu">
+					<li><a href="/galerie_statica">Simpla</a></li>
+					<li><a href="/galerie_animata">Animata</a></li>
+				</ul>
+			</li>
+
+			<li><a href="/sign_up">Sign Up</a> </li>
+
+			<% if (locals.utilizator) { %> <!-- testez ca utilizatorul e logat-->
+				<li><a href="/logout">Logout</a></li>
+			<% }else{ %>
+				<li><a href="/log_in">Log In</a></li>
+			<% } %>
+
+		</ul>
+
+	</nav>
+</header>

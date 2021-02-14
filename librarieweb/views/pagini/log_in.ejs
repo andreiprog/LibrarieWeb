@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+	<%- include("../fragmente/head.ejs") %>
+	<link rel="stylesheet" href="/css/sign_up.css">
+
+	<title>Log In</title>
+
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+        <section class="form-section">
+            <h1>Log In</h1>
+            <% if (!locals.utilizator) { %>
+                    
+                <p>Va rugam sa va logati: <br/>
+                <form id="login" method="post" action="/login">
+                    <p>
+                        <label>
+                            Username: <input type="text" name="username" value="">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Parola: <input type="password" name="parola" value="">
+                        </label>
+                    </p>
+                    <p>
+                        <input type="submit" value="Log In">
+                    </p>
+                </form>
+                <% } %>
+                
+                <% if (locals.utilizator && locals.utilizator.rol=="admin") { %>
+                
+                    <p>Sterge utilizator</p>
+                    <form id="sterge" method="post" action="/sterge_utiliz">
+                        <label>
+                            Id: <input type="text" name="id_utiliz" value="">
+                        </label>
+                        
+                        <input type="submit" value="Submit">
+                    </form>
+                <% } %>
+        </section>
+
+	</main>
+
+	<%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

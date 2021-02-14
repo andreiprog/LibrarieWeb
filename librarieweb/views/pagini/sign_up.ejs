@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+	<%- include("../fragmente/head.ejs") %>
+	<link rel="stylesheet" href="/css/sign_up.css">
+
+	<title>Sing Up</title>
+
+</head>
+
+<body>
+	<%- include("../fragmente/header.ejs") %>
+
+	<main>
+        <section class="form-section">
+            <h1>Inregistrare utilizator</h1>
+            <% if (locals.err !="") { %>
+            <form method="post" class="date"  action="/inreg" id="inregistrare" enctype="multipart/form-data" >
+                <p>
+                <label>
+                    Username: <input type="text" name="username"  value="">
+                </label>
+                </p>
+                <p>
+                <label>
+                    Nume: <input type="text" name="nume" value="Popescu">
+                </label>
+                </p>
+                <p>
+                <label>
+                    Prenume: <input type="text" name="prenume" value="Ion">
+                </label>
+                </p>
+                <p>
+                <label>
+                    Parola: <input type="password" name="parola" value="">
+                </label>
+                </p>
+                <p>
+                <label>
+                    Reintroduceti parola: <input type="password" name="rparola" value="">
+                </label>
+                </p>
+                <p>
+                <label>
+                    Email: <input type="text" name="email" value="vion22517@gmail.com"  size="30">
+                </label>
+                </p>
+                <p>
+                    <label>Problema_vedere 
+                        <input type="checkbox" name = "problema_vedere">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Fotografie: <input type="file" name="fotografie">
+                    </label>
+                </p>
+                <p>		
+                    <input type="submit" value="Sign Up">
+                    <input type="reset" value="Reseteaza">
+                </p>
+            </form>
+            <% } %>
+            <%- (locals.raspuns?locals.raspuns:"")+"<br/>"+(locals.err?locals.err:"")%>
+    
+        </section>
+
+		
+	</main>
+
+	<%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+	<%- include("../fragmente/head.ejs") %>
+	<link rel="stylesheet" href="/css/produse.css">
+	<script src="/scripts/produse_script.js"></script>
+
+	<title>Produse</title>
+
+</head>
+
+<body>
+	<%- include("../fragmente/header.ejs") %>
+
+	<main>
+		<h1>Produse</h1>
+
+		<section>
+			<div id="radio-grup"> Filtre:
+				<label>activare
+					<input id="i_rad1" name="gr_rad" value="activare" type="radio"/>
+				</label>
+				<label>dezactivare
+					<input id="i_rad2" name="gr_rad" value="dezactivare" type="radio"/>
+				</label>
+			</div>
+			<div id="filtre">
+				<label>Categorie:
+					<select id="i_categorie">
+						<option value="beletristica" selected>beletristica</option>
+						<option value="manuale">manuale</option>
+						<option value="biografii">biografii</option>
+						<option value="drept">drept</option>
+						<option value="limbi_straine">limbi_straine</option>
+					</select>
+				</label>
+				<label>Cartonata:
+					<input type="checkbox" id="i_cartonata">
+				</label>
+				<label>Pret maxim: 
+					10<input type="range" id="i_pret" min="10" step="10" max="100" value="100">100 
+					(selectat: <span id="info_range">100</span>)
+				</label>
+				<button id="filtrare"> Filtreaza </button>
+				<button id="resetare-filtre"> Resetare Filtre </button>
+			</div>
+
+			<div id="sortare">
+				Sortare: 
+				<button id="sort-ascendent"> Ascendent </button>
+				<button id="sort-descendent"> Descendent </button>
+			</div>
+			<div id="calculare">
+				<p>Pret total: <span id="pret-total">0</span> lei</p>
+				<button id="calculeaza-suma"> Calculeaza pretul total pentru elementele selectate </button>
+			</div>
+		</section>
+
+		<section id="produse">
+			<% for(let i=0; i<locals.produse.length; i++) { %>
+				<%- include("../fragmente/produs.ejs",{produs:locals.produse[i]}) %>
+			<% } %>
+		</section>
+
+		
+	</main>
+
+	<%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>
