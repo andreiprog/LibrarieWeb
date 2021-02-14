@@ -1,0 +1,247 @@
+/**/
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "gr-titlu gr-titlu gr-titlu gr-titlu" "gr-despre gr-despre gr-despre gr-despre" "gr-carti-ro gr-carti-straine gr-autori-ro gr-autori-straini" "gr-tabel gr-tabel gr-tabel gr-tabel" "gr-citate gr-citate gr-citate gr-citate";
+}
+
+h1 {
+    grid-area: gr-titlu;
+}
+
+#despre-site {
+    grid-area: gr-despre;
+}
+
+#carti-romanesti {
+    grid-area: gr-carti-ro;
+}
+
+#carti-straine {
+    grid-area: gr-carti-straine;
+}
+
+#autori-romani {
+    grid-area: gr-autori-ro;
+}
+
+#autori-straini {
+    grid-area: gr-autori-straini;
+}
+
+#tabel {
+    grid-area: gr-tabel;
+}
+
+#sectiune-citate {
+    grid-area: gr-citate;
+}
+
+/**/
+
+.list-box {
+    margin: 0.25rem;
+    background-color: #BDB76B;
+}
+
+.list-box>ul {
+    padding: 0.5rem;
+}
+
+.list-box li {
+    margin-left: 1.5rem;
+    font-size: 0.8rem;
+}
+
+.list-box>h3 {
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #3e4444;
+    color: white;
+}
+
+/*-------------------------------------------------*/
+
+/*tabel*/
+
+th, td {
+    border: 0.05rem solid black;
+    padding: 0.25rem;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    border-collapse: collapse;
+    empty-cells: show;
+}
+
+thead>tr, tfoot>tr {
+    background-color: #ada397;
+}
+
+table thead th:hover {
+    background-color: #3e4444;
+    color: white;
+}
+
+table thead tr :not([colspan]):hover {
+    background-color: #405d27;
+}
+
+table tbody tr:hover :not([colspan]) {
+    background-color: #b9936c;
+}
+
+tbody>tr:nth-child(even) {
+    background-color: #e3eaa7;
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: #9dd08e;
+}
+
+/**/
+
+.citate {
+    margin: 0;
+    padding: 1rem;
+    background-color: DarkSalmon;
+}
+
+.citat-element {
+    background: white;
+}
+
+.citate>h2, .citat-element {
+    margin: 0.5rem;
+    padding: 0.25rem;
+}
+
+.citat-element>h3, .citat-element>p {
+    margin: 0.25rem;
+    font-size: 90%;
+}
+
+.citat-element>p {
+    font-style: italic;
+}
+
+/*countere*/
+
+.citate {
+    counter-reset: c1;
+}
+
+.citat-element>p:before {
+    counter-increment: c1;
+    content: counter(c1, lower-latin) ") "
+}
+
+/*banner*/
+
+#banner {
+    position: fixed;
+    visibility: hidden;
+    left: -30vw;
+    bottom: 0;
+    width: 100vw;
+    height: 5vh;
+    font-size: 5vh;
+    text-align: center;
+    animation-name: animatie_banner;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animatie_banner {
+    0% {
+        visibility: visible;
+    }
+    15% {
+        transform: translateX(15vw);
+        background-color: red;
+        border: 5px solid yellow;
+    }
+    30% {
+        transform: translateX(30vw);
+        background-color: yellow;
+        border: 5px solid red;
+    }
+    50% {
+        transform: translateX(30vw);
+        background-color: red;
+        border: 5px solid yellow;
+    }
+    100% {
+        transform: translateX(30vw);
+        background-color: red;
+        border: 5px solid yellow;
+        visibility: hidden;
+    }
+}
+
+/* pt diferite ecrane */
+
+@media screen and (max-width: 700px) {
+    #banner {
+        display: none;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "gr-titlu gr-titlu" 
+        "gr-despre gr-despre" 
+        "gr-carti-ro gr-carti-straine" 
+        "gr-autori-ro gr-autori-straini"
+        "gr-tabel gr-tabel" 
+        "gr-citate gr-citate";
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .table-container>table {
+        width: 100vw;
+    }
+    .table-container {
+        width: 80vw;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    main {
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-areas: 
+        "gr-titlu" 
+        "gr-despre" 
+        "gr-carti-ro" 
+        "gr-carti-straine" 
+        "gr-autori-ro" 
+        "gr-autori-straini"
+        "gr-tabel" 
+        "gr-citate";
+    }
+}
+
+/*stil de printare*/
+
+@media print {
+    #banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 90%;
+        height: 20px;
+        font-size: 20px;
+        text-align: center;
+        color: red;
+        background-color: white;
+        border: 5px solid yellow;
+    }
+}

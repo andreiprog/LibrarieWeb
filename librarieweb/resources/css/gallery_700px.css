@@ -1,0 +1,43 @@
+#gr {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#gr>figure:nth-child(10) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(9) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(8) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(7) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(6) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(5) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(4) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(3) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(2) {
+    grid-area: auto;
+}
+
+#gr>figure:nth-child(1) {
+    grid-area: auto;
+}

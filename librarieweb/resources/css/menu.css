@@ -1,0 +1,112 @@
+.logo {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+header div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    background: #c2b900;
+    font-size: smaller;
+    font-style: italic;
+}
+
+nav {
+    position: fixed;
+    top: 3rem;
+    left: 0px;
+    width: 100%;
+    height: 3rem;
+    background: #A9A9A9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.menu>li, ul.menu>li>ul.submenu>li {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    list-style-type: none;
+    background: #A9A9A9;
+}
+
+ul.menu>li {
+    float: left;
+    width: 6rem;
+}
+
+ul.menu>li>ul.submenu {
+    position: relative;
+    top: 0px;
+}
+
+ul.menu>li>a, ul.menu>li>label, ul.submenu>li>a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+ul.menu a:hover, ul.menu label:hover {
+    background: black;
+}
+
+#hamburger {
+    display: none;
+    height: 3rem;
+    padding-left: 1rem;
+}
+
+#hamburger>span {
+    height: 100%;
+    font-size: 3rem;
+    width: auto;
+}
+
+#ch-menu, .ch-submenu {
+    display: none;
+}
+
+ul.submenu {
+    display: none;
+}
+
+/* pt submeniu */
+
+.ch-submenu:checked~ul.submenu {
+    display: block;
+}
+
+/* pt ecrane mai mici */
+
+@media screen and (max-width: 500px) {
+    #hamburger {
+        display: block;
+    }
+    #home-text {
+        display: none;
+    }
+    ul.menu {
+        display: none;
+    }
+    #ch-menu:checked~ul.menu {
+        display: block;
+    }
+    ul.menu>li {
+        width: 100%;
+        background: #A9A9A9;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #home-text {
+        display: none;
+    }
+}

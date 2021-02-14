@@ -1,0 +1,8 @@
+.form-section{
+    display: grid;
+    width: 80%;
+    padding: 1rem;
+    padding-left: 2rem;
+	border:0.05rem solid grey;
+	border-radius:2rem;
+}

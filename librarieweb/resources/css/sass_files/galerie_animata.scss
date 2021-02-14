@@ -1,0 +1,69 @@
+$g_width:400px;
+$g_height:300px;
+#galerie-animata {
+    width: $g_width;
+    height: $g_height;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    margin-bottom: 5rem;
+}
+
+#galerie-animata figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    text-align: center;
+}
+
+$nr_img: 10;
+#galerie-animata figure {
+    width: $g_width;
+    height: $g_height;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    animation-name: animatie_gal;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-duration: $nr_img*3s;
+}
+
+@for $a from 1 through $nr_img {
+    #galerie-animata figure:nth-of-type(#{$nr_img+1-$a}){
+        animation-delay:(-1+$a)*3s;
+    }
+}
+
+$a:3*100/(3*$nr_img);
+
+@keyframes animatie_gal {
+    0% { z-index: 10; opacity: 1; left:0px;}
+    #{1/3*$a}%{ left: 0px;  left: 0px;}
+    #{2*$a/3}%{opacity: 1; left: #{$g_width/4};}
+    #{-1+$a}% {z-index:10; opacity: 0.5; left: -#{$g_width/8};}
+    #{$a}% { opacity:0; left: #{$g_width+$g_width/4};}
+    #{$a+0.000001}%{ z-index: -10; left: 0px;}
+
+
+    #{100-$a}%{opacity: 0;}
+    #{100-$a+0.000001}%{z-index: -10; left:0px; }
+    #{100-$a+0.000002}%{z-index: 0;}
+    100%{ opacity:1; z-index:0; }
+}
+
+
+#galerie-animata:hover figure{
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    #galerie-animata {
+        display: none;
+    }
+}
