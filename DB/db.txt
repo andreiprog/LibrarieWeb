@@ -7,7 +7,7 @@ var conexiuneBD=mysql.createConnection({
 	database:"librarie_online"
 });
 change the user and password to the corespondent values for your db
-//create a db schema in MySQL Workbench
+//create the following tables in your librarie_online schema
 CREATE TABLE `carti` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nume` varchar(45) NOT NULL,
